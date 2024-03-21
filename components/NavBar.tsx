@@ -14,8 +14,8 @@ const NavBar = () => {
     { label: "Issues", href: "/issues" },
   ];
   return (
-    <nav className="flex min-w-screen gap-12 p-4 border-b-[1px] border-b-accent-foreground mb-5 text-xs items-center">
-      <div className="flex gap-12 flex-1">
+    <nav className="flex sticky min-w-screen p-4 px-96 justify-center border-b-[1px] border-b-accent-foreground mb-5 text-[1rem] items-center">
+      <div className="flex gap-4 flex-1 items-center max-w-[40vw]">
         <Link href="/">
           <FaBug className="hover:text-primary-foreground transistion-all ease-in-out duration-150" />
         </Link>

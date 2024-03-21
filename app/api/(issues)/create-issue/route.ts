@@ -7,16 +7,14 @@ const createIssueSchema = z.object({
   description: z.string().min(20),
 });
 
-export async function POST(request: NextRequest) {
-  const body = await request.json();
+export async function POST(req: NextRequest) {
+  const body = await req.json();
   const validation = createIssueSchema.safeParse(body);
   if (!validation.success) {
     return NextResponse.json(validation.error.issues, { status: 400 });
   }
-
   const newIssue = await prisma.issue.create({
     data: { title: body.title, description: body.description },
   });
-
   return NextResponse.json(newIssue, { status: 201 });
 }

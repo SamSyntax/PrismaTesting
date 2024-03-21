@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import { Provider } from "@/providers/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
+const geist = GeistSans;
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Provider>
-        <body className={`${inter.className} bg-foreground`}>
+        <body className={`${geist.className} bg-foreground`}>
           <NavBar />
           <main>{children}</main>
         </body>
